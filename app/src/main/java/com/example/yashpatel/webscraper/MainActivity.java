@@ -13,6 +13,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     EditText url,tag1,tag2;
     String[] searchby = {"Search by tag", "Search by child"};
+    String[] searchby2 = {"Search by tag2", "Search by child2"};
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +33,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         Spinner spintag2 = (Spinner) findViewById(R.id.spintag2);
         spintag2.setOnItemSelectedListener(MainActivity.this);
-        ArrayAdapter aa2 = new ArrayAdapter(this, android.R.layout.simple_spinner_item, searchby);
+        ArrayAdapter aa2 = new ArrayAdapter(this, android.R.layout.simple_spinner_item, searchby2);
         aa2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spintag2.setAdapter(aa2);
 
     }
 
@@ -52,12 +55,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         // on item selected in the spinner
         if (parent.getItemAtPosition(position) == "Search by tag"){
 
+
+
         }
         else if(parent.getItemAtPosition(position) == "Search by child"){
 
-
-
         }
+
 
 
 
